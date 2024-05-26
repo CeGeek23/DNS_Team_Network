@@ -1,0 +1,12 @@
+{
+  "name": "dns_team",
+  "version": "1.0.0",
+  "description": "Ceci est un projet dans le cadre du tp de reseau qui vise à configurer un serveur dns local capable de communiquer et un captive portal pour l'utilisateur",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
