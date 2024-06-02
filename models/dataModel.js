@@ -50,4 +50,4 @@ exports.updateData = (id, nom, prenom, hostname, port) => {
   
 exports.deleteData = (id) => {
     data = data.filter((item) => item.id !== parseInt(id));
-  };
+};

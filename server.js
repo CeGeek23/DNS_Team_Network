@@ -22,7 +22,6 @@ app.use('/', indexRoutes);
 app.use('/api/data', dataRoutes);
 
 
-
 // Fonction pour trouver un port disponible
 function getAvailablePort(startPort = 3000, maxPort = 65535) {
     return new Promise((resolve, reject) => {
