@@ -6,15 +6,15 @@ exports.getData = (req, res) => {
 };
 
 exports.createData = (req, res) => {
-  const { nom, prenom, hostname, email } = req.body;
-  const newData = dataModel.createData(nom, prenom, hostname, email);
+  const { nom, prenom, hostname, port } = req.body;
+  const newData = dataModel.createData(nom, prenom, hostname, port);
   res.status(201).json(newData);
 };
 
 exports.updateData = (req, res) => {
   const { id } = req.params;
-  const { nom, prenom, hostname, email } = req.body;
-  const updatedData = dataModel.updateData(id, nom, prenom, hostname, email);
+  const { nom, prenom, hostname, port } = req.body;
+  const updatedData = dataModel.updateData(id, nom, prenom, hostname, port);
   if (updatedData) {
     res.json(updatedData);
   } else {

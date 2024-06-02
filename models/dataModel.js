@@ -7,40 +7,41 @@ let data = [
         nom: 'Tchakonte', 
         prenom: 'Cedrick', 
         hostname: 'cedrick', 
-        email: 'tchakontecedrick@example.cm' 
+        port: 1269 
     },
     { 
         id: 2, 
         nom: 'Heutchou', 
         prenom: 'Kologne', 
         hostname: 'kologne', 
-        email: 'heutchoukologne@example.cm',
+        port: 1980 
     },
     { 
         id: 3, 
         nom: 'Dada', 
         prenom: 'Cedric', 
         hostname: 'cedric', 
-        email: 'dadacedric@example.cm' },
+        port: 1715
+    },
 ];
   
 exports.getData = () => {
     return data;
 };
   
-exports.createData = (nom, prenom, hostname, email) => {
-    const newData = { id: Date.now(), nom, prenom, hostname, email };
+exports.createData = (nom, prenom, hostname, port) => {
+    const newData = { id: Date.now(), nom, prenom, hostname, port };
     data.push(newData);
     return newData;
 };
   
-exports.updateData = (id, nom, prenom, hostname, email) => {
+exports.updateData = (id, nom, prenom, hostname, port) => {
     const dataIndex = data.findIndex((item) => item.id === parseInt(id));
     if (dataIndex !== -1) {
       data[dataIndex].nom = nom;
       data[dataIndex].prenom = prenom;
       data[dataIndex].hostname = hostname;
-      data[dataIndex].email = email;
+      data[dataIndex].port = port;
       return data[dataIndex];
     }
     return null;
