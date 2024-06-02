@@ -36,8 +36,7 @@ exports.launchWifi = (req, res, next) => {
           else {
                     console.log('Le point d\'accès a été créé avec succès.');
                        
-                    res.send('Le point d\'accès a été créé avec succès.');
-                           
+                    res.send('Le point d\'accès a été créé avec succès.');             
           }
         });
 }
