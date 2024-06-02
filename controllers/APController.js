@@ -1,4 +1,5 @@
 const express = require('express');
+const { exec } = require('child_process');
 
 exports.generateAPWebPage = (req, res, next) => {
   res.send(`
@@ -39,6 +40,5 @@ exports.launchWifi = (req, res, next) => {
                            
           }
         });
-      next();
 }
 
