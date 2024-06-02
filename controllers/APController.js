@@ -1,6 +1,19 @@
 const express = require('express');
 
-exports.launchWifi = (req, res) => {
+exports.generateAPWebPage = (req, res, next) => {
+  res.send(`
+    <form action="/create-access-point" method="POST">
+      <label for="ssid">SSID:</label>
+      <input type="text" id="ssid" name="ssid"><br><br>
+      <label for="password">Mot de passe:</label>
+      <input type="password" id="password" name="password"><br><br>
+      <input type="submit" value="Créer le point d'accès">
+    </form>
+  `);
+  next();
+}
+
+exports.launchWifi = (req, res, next) => {
     const ssid = req.body.ssid;
     const password = req.body.password;
     console.log(ssid)
@@ -26,16 +39,6 @@ exports.launchWifi = (req, res) => {
                            
           }
         });
+      next();
 }
 
-exports.generateAPWebPage = (req, res) => {
-    res.send(`
-      <form action="/create-access-point" method="POST">
-        <label for="ssid">SSID:</label>
-        <input type="text" id="ssid" name="ssid"><br><br>
-        <label for="password">Mot de passe:</label>
-        <input type="password" id="password" name="password"><br><br>
-        <input type="submit" value="Créer le point d'accès">
-      </form>
-    `);
-}

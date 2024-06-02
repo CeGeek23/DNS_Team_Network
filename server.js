@@ -10,6 +10,7 @@ const staticFilesMiddleware = require('./middleware/staticFiles');
 // Routes
 const indexRoutes = require('./routes/indexRoutes');
 const dataRoutes = require('./routes/dataRoutes');
+const APRoutes = require('./routes/APRoutes');
 
 const app = express();
 
@@ -20,6 +21,8 @@ app.use(staticFilesMiddleware);
 // Routes
 app.use('/', indexRoutes);
 app.use('/api/data', dataRoutes);
+app.use('/', APRoutes);
+
 
 
 // Fonction pour trouver un port disponible
