@@ -1,5 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv');
+
 dotenv.config();
 
 // Middleware
@@ -11,6 +12,16 @@ const indexRoutes = require('./routes/indexRoutes');
 const dataRoutes = require('./routes/dataRoutes');
 
 const app = express();
+
+// Middleware
+app.use(bodyParserMiddleware);
+app.use(staticFilesMiddleware);
+
+// Routes
+app.use('/', indexRoutes);
+app.use('/api/data', dataRoutes);
+
+
 
 // Fonction pour trouver un port disponible
 function getAvailablePort(startPort = 3000, maxPort = 65535) {
@@ -44,10 +55,3 @@ getAvailablePort(process.env.PORT ? parseInt(process.env.PORT) : 4000)
     });
 
 
-// Middleware
-app.use(bodyParserMiddleware);
-app.use(staticFilesMiddleware);
-
-// Routes
-app.use('/', indexRoutes);
-app.use('/api/data', dataRoutes);
